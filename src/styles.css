@@ -1,1 +1,46 @@
+h3 {
+  display: none;
+}
 
+h2 {
+  text-align: center;
+  color: white;
+}
+
+body{
+  background-image: url(http://art.cafimg.com/images/Category_78028/subcat_141340/TOYfTl4f_0104161422041gpadd.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.p1image {
+  display: block;
+  text-align: center;
+  color: white;
+}
+
+.p2image {
+  display: block;
+  text-align: center;
+  color: white;
+}
+
+h3{
+  text-align: center;
+  color: white;
+  font-size: 60px;
+}
+.btn {
+  text-align: center;
+  margin-left: 40%;
+  margin-top: 20%;
+  display: block;
+}
+.jumbotron {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 32px;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+  box-shadow: 4px 4px green;
+  background-color: grey;
+}

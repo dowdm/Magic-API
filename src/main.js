@@ -49,6 +49,13 @@ function damagePlayer2(p1Power, p2Power) {
   return damage2;
 }
 
+function winCheck(p1Damage, p2Damage) {
+  if (p1Damage >= 20 || p2Damage >= 20) {
+    $(".win").show();
+    $("#battle").hide();
+  }
+}
+
 
 $(document).ready(function(){
   let p1Damage = 0;
@@ -66,16 +73,17 @@ $(document).ready(function(){
       let p2Power = [parseInt(p2Card.power), parseInt(p2Card.toughness)];
       p1Damage += damagePlayer1(p1Power, p2Power);
       p2Damage += damagePlayer2(p1Power, p2Power);
-      $("#p1damage").text(p2Damage);
-      $("#p2damage").text(p1Damage);
+      $("#p1damage").text(`Your damage: ${p2Damage}`);
+      $("#p2damage").text(`Your damage: ${p1Damage}`);
       $('.p1image').html(`<img src="${p1Card.imageUrl}" alt="card">`);
       $('.p2image').html(`<img src="${p2Card.imageUrl}" alt="card">`);
-      $("#battle").show();
+      winCheck(p1Damage, p2Damage);
+    },
+     function(error) {
+      $('#error').text(`There was an error processing your request: ${error.message}`);
+
 
     });
   });
 });
 //
-// },
-//  function(error) {
-//   $('#error').text(`There was an error processing your request: ${error.message}`);
